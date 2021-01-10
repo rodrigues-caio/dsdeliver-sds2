@@ -1,7 +1,10 @@
+import React from 'react';
+import NavBar from './NavBar';
+
 import './App.css';
 
 function App() {
-  return <h1>App</h1>;
+  return <NavBar />;
 }
 
 export default App;
