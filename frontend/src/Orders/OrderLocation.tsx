@@ -5,8 +5,8 @@ import { OrderLocationData } from './types';
 import { fetchLocalMapBox } from '../api';
 
 const Initialposition = {
-  lat: -51.505,
-  lng: -48.26201,
+  lat: -23.6821604,
+  lng: -46.8754815,
 };
 
 type Place = {
@@ -25,7 +25,7 @@ type Props = {
 const OrderLocation = ({ onChangeLocation }: Props) => {
   const [address, setAddress] = useState<Place>({
     position: Initialposition,
-  });
+  } as Place);
 
   const loadOptions = async (
     inputValue: string,
@@ -69,7 +69,7 @@ const OrderLocation = ({ onChangeLocation }: Props) => {
             placeholder='Digite um endereço para entregar o pedido'
             className='filter'
             loadOptions={loadOptions}
-            onChange={(value) => handleChangeSelect(values as Place)}
+            onChange={(value) => handleChangeSelect(value as Place)}
           />
         </div>
         <MapContainer
